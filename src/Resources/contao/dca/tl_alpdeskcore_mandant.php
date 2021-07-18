@@ -12,6 +12,6 @@ $GLOBALS['TL_DCA']['tl_alpdeskcore_mandant']['fields']['footballmandantdb'] = [
     'exclude' => true,
     'inputType' => 'select',
     'foreignKey' => 'tl_alpdeskcore_databasemanager.title',
-    'eval' => ['mandatory' => false, 'tl_class' => 'w50'],
+    'eval' => ['mandatory' => false, 'tl_class' => 'w50', 'includeBlankOption' => true],
     'sql' => "int(10) unsigned NOT NULL default '0'"
 ];

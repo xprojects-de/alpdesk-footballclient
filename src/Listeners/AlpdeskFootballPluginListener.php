@@ -6,6 +6,8 @@ namespace Alpdesk\AlpdeskFootball\Listeners;
 
 use Alpdesk\AlpdeskCore\Events\Event\AlpdeskCorePlugincallEvent;
 use Alpdesk\AlpdeskCore\Library\Mandant\AlpdescCoreBaseMandantInfo;
+use Alpdesk\AlpdeskCore\Model\Database\AlpdeskcoreDatabasemanagerModel;
+use Alpdesk\AlpdeskFootball\Model\CrudModel;
 use Twig\Environment;
 use Contao\Environment as ContaoEnvironment;
 
@@ -35,15 +37,18 @@ class AlpdeskFootballPluginListener
 
         $dbReference = (int)$mandantdata['footballmandantdb'];
 
-        /*if ($dbReference === null || $dbReference <= 0) {
+        if ($dbReference === null || $dbReference <= 0) {
             throw new \Exception('invalid footballmandantdb');
-        }*/
+        }
 
-        //$connection = AlpdeskcoreDatabasemanagerModel::connectionById($dbReference);
+        $connection = AlpdeskcoreDatabasemanagerModel::connectionById($dbReference);
 
-        /*if ($connection === null) {
+        if ($connection === null) {
             throw new \Exception('invalid connection');
-        }*/
+        }
+
+        CrudModel::setConnection($connection);
+        CrudModel::setMandantId($mandantInfo->getId());
 
     }
 
