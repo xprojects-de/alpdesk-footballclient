@@ -1,1 +1,9 @@
+services:
 
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  Alpdesk\AlpdeskFootball\Listeners\Callbacks\DcaCallbacks:
+    tags:
+      - { name: contao.callback, table: tl_member, target: fields.alpdeskfootball_youth.options, method: getYouthes }

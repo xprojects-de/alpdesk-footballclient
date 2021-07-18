@@ -1,0 +1,14 @@
+services:
+
+  alpdeskbooking.listener.registerplugin:
+    class: Alpdesk\AlpdeskFootball\Listeners\AlpdeskFootballRegisterPluginListener
+    tags:
+      - { name: kernel.event_listener, event: alpdesk.registerplugin }
+
+  alpdeskbooking.listener.plugin:
+    class: Alpdesk\AlpdeskFootball\Listeners\AlpdeskFootballPluginListener
+    arguments:
+      - '%kernel.project_dir%'
+      - '@twig'
+    tags:
+      - { name: kernel.event_listener, event: alpdesk.plugincall }
