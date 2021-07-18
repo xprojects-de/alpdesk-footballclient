@@ -16,9 +16,9 @@ use Alpdesk\AlpdeskFootball\AlpdeskFootballBundle;
 
 class Plugin implements BundlePluginInterface, RoutingPluginInterface
 {
-    public function getBundles(ParserInterface $parser): array
+    public function getBundles(ParserInterface $parser)
     {
-        return [BundleConfig::create(AlpdeskFootballBundle::class)->setLoadAfter([ContaoCoreBundle::class, AlpdeskCoreBundle::class]),];
+        return [BundleConfig::create(AlpdeskFootballBundle::class)->setLoadAfter([ContaoCoreBundle::class, AlpdeskCoreBundle::class])];
     }
 
     /**
