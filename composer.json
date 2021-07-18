@@ -1,0 +1,43 @@
+{
+  "name": "alpdesk/alpdesk-footballclient",
+  "description": "FootballPlugin for Alpdesk",
+  "keywords": [
+    "contao",
+    "alpdesk",
+    "booking"
+  ],
+  "type": "contao-bundle",
+  "version": "0.0.1-BETA1",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4",
+    "alpdesk/alpdesk-core": "^2.0.0"
+  },
+  "authors": [
+    {
+      "name": "Alpdesk",
+      "homepage": "https://alpdesk.de",
+      "email": "info@alpdesk.de",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Alpdesk\\AlpdeskBooking\\": "src/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "Alpdesk\\AlpdeskFootball\\ContaoManager\\Plugin",
+    "contao-component-dir": "public"
+  },
+  "config": {
+    "contao-component-dir": "public"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^0.12.81",
+    "contao/manager-bundle": "^4.11",
+    "vimeo/psalm": "^4.6",
+    "phpunit/phpunit": "^9.5",
+    "symfony/phpunit-bridge": "^5.2"
+  }
+}

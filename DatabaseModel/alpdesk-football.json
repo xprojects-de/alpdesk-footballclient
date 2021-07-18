@@ -1,0 +1,5928 @@
+{
+  "engine": "InnoDB",
+  "charset": "utf8mb4",
+  "collation": "utf8mb4_unicode_ci",
+  "tables": [
+    {
+      "table": "Owner",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "active": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Salutation": {
+          "type": "string",
+          "comment": "ENUM - MALE,FEMALE,DIVERSE",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Lastname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Firstname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Nationality": {
+          "type": "string",
+          "comment": "ENUM - DE,GB,etc.",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Image": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Company": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "showAs": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "LetterSalutation": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Street": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Postal": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "City": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Country": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Phone1": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Phone2": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Fax": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Email": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Bank": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Iban": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Bic": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "BankAccountOwner": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "TaxNumber": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "UstdIdNr": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Comment": {
+          "type": "text",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "TemplateOwnerBillEmail": {
+          "type": "string",
+          "comment": "TemplateOwnerBillEmail=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TemplateOwnerBillPdf": {
+          "type": "string",
+          "comment": "TemplateOwnerBillPdf=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TemplateBookingEmail": {
+          "type": "string",
+          "comment": "TemplateBookingEmail=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TemplateBookingPdf": {
+          "type": "string",
+          "comment": "TemplateBookingPdf=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "Managers",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "active": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Salutation": {
+          "type": "string",
+          "comment": "ENUM - MALE,FEMALE,DIVERSE",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Lastname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Firstname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Nationality": {
+          "type": "string",
+          "comment": "ENUM - DE,GB,etc.",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Image": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Company": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "showAs": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "LetterSalutation": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Street": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Postal": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "City": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Country": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Phone1": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Phone2": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Fax": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Email": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "NotificationType": {
+          "type": "string",
+          "comment": "ENUM - NO,EMAIL",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Comment": {
+          "type": "text",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "TemplateBookingEmail": {
+          "type": "string",
+          "comment": "TemplateBookingEmail=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TemplateBookingPdf": {
+          "type": "string",
+          "comment": "TemplateBookingPdf=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "SeasonGroups",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Description": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        }
+      }
+    },
+    {
+      "table": "SeasonTimes",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_SeasonGroup_endDate": [
+          "uniqueId",
+          "deleteFlag",
+          "SeasonGroup",
+          "endDate"
+        ],
+        "uniqueId_deleteFlag_SeasonGroup_endDate_startDate": [
+          "uniqueId",
+          "deleteFlag",
+          "SeasonGroup",
+          "endDate",
+          "startDate"
+        ]
+      },
+      "foreignKeys": {
+        "SeasonGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "SeasonGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "SeasonGroup": {
+          "type": "string",
+          "comment": "SeasonGroup=SeasonGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "startDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "endDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "PriceGroups",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "foreignKeys": {
+        "SeasonGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "SeasonGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Description": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "SeasonGroup": {
+          "type": "string",
+          "comment": "SeasonGroup=SeasonGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "Prices",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "foreignKeys": {
+        "PriceGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "PriceGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "PriceGroup": {
+          "type": "string",
+          "comment": "PriceGroup=PriceGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "maxPersons": {
+          "type": "int",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "finalCleaningPrice": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "DepositPrice": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "PetPrice": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "GapClose": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "minimumLength": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "shortTermDaysBefore": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "shortTermMinimumLength": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "closedDaysAfter": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "ArrivalDays": {
+          "type": "text",
+          "comment": "ENUM - Mon,Tue,Wed,Thu,Fri,Sat,Sun - multiselect",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "DepartureDays": {
+          "type": "text",
+          "comment": "ENUM - Mon,Tue,Wed,Thu,Fri,Sat,Sun - multiselect",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "PricesSeasonTimes",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "deleteFlag_Price_SeasonTime": [
+          "deleteFlag",
+          "Price",
+          "SeasonTime"
+        ]
+      },
+      "foreignKeys": {
+        "Prices": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Price": "uniqueId"
+          }
+        },
+        "SeasonTimes": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "SeasonTime": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Price": {
+          "type": "string",
+          "comment": "Price=Prices.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "SeasonTime": {
+          "type": "string",
+          "comment": "SeasonTime=SeasonTimes.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "Countries",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        }
+      }
+    },
+    {
+      "table": "Regions",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "foreignKeys": {
+        "Countries": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Country": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Country": {
+          "type": "string",
+          "comment": "Country=Countries.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "Cities",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "foreignKeys": {
+        "Regions": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Region": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Region": {
+          "type": "string",
+          "comment": "Region=Regions.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "HolidayResorts",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "unique": [
+        [
+          "Alias"
+        ],
+        [
+          "shortIdentifier"
+        ]
+      ],
+      "foreignKeys": {
+        "Cities": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "City": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "active": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "online": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "shortIdentifier": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Name": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Alias": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "255"
+        },
+        "Street": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Postal": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "City": {
+          "type": "string",
+          "comment": "City=Cities.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "showMap": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "zoomLevel": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "Position": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        }
+      }
+    },
+    {
+      "table": "HolidayResortFeatures",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_HolidayResort": [
+          "uniqueId",
+          "deleteFlag",
+          "HolidayResort"
+        ]
+      },
+      "foreignKeys": {
+        "Features": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Feature": "uniqueId"
+          }
+        },
+        "HolidayResorts": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "HolidayResort": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "HolidayResort": {
+          "type": "string",
+          "comment": "HolidayResort=HolidayResorts.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Feature": {
+          "type": "string",
+          "comment": "Feature=Features.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Content": {
+          "type": "string",
+          "comment": "value when FieldType is DYNAMIC",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        }
+      }
+    },
+    {
+      "table": "HolidayResortImages",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "foreignKeys": {
+        "HolidayResorts": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "HolidayResort": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "HolidayResort": {
+          "type": "string",
+          "comment": "HolidayResort=HolidayResorts.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Image": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "isDefault": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "Objects",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_active_online": [
+          "uniqueId",
+          "deleteFlag",
+          "active",
+          "online"
+        ]
+      },
+      "unique": [
+        [
+          "Alias"
+        ],
+        [
+          "shortIdentifier"
+        ]
+      ],
+      "foreignKeys": {
+        "HolidayResorts": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "HolidayResort": "uniqueId"
+          }
+        },
+        "Owner": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Owner": "uniqueId"
+          }
+        },
+        "Managers": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Manager": "uniqueId"
+          }
+        },
+        "PriceGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "PriceGroup": "uniqueId"
+          }
+        },
+        "Cities": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "City": "uniqueId"
+          }
+        },
+        "TouristTaxGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "TouristTaxGroup": "uniqueId"
+          }
+        },
+        "ServiceGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "ServiceGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "active": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "online": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "shortIdentifier": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Name": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Alias": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "255"
+        },
+        "Street": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Postal": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "City": {
+          "type": "string",
+          "comment": "City=Cities.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "showAddress": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "showMap": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "zoomLevel": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "Position": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "OnlineOffer": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "OnlineBooking": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "PriceGroup": {
+          "type": "string",
+          "comment": "PriceGroup=PriceGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "HolidayResort": {
+          "type": "string",
+          "comment": "HolidayResort=HolidayResorts.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Owner": {
+          "type": "string",
+          "comment": "Owner=Owner.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Manager": {
+          "type": "string",
+          "comment": "Manager=Managers.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TouristTaxGroup": {
+          "type": "string",
+          "comment": "TouristTaxGroup=TouristTaxGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "ServiceGroup": {
+          "type": "string",
+          "comment": "ServiceGroup=ServiceGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "minimumPersons": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "maximumPersons": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "maxAgeExtraBed1": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "maxAgeExtraBed2": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "numberOfRooms": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "numberOfBedrooms": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "numberOfBathrooms": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "sizeQm": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "numberOfPets": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "ContractNumber": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "startOfContract": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "endOfContract": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Bank": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Iban": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Bic": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "BankAccountOwner": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Sorting": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "TemplateOfferEmail": {
+          "type": "string",
+          "comment": "TemplateOfferEmail=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TemplateOfferPdf": {
+          "type": "string",
+          "comment": "TemplateOfferPdf=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TemplateBookingEmail": {
+          "type": "string",
+          "comment": "TemplateBookingEmail=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TemplateBookingPdf": {
+          "type": "string",
+          "comment": "TemplateBookingPdf=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TemplateBillEmail": {
+          "type": "string",
+          "comment": "TemplateBillEmail=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TemplateBillPdf": {
+          "type": "string",
+          "comment": "TemplateBillPdf=DocumentTemplates.uniqueId - can be NULL",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "ObjectFeatures",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_object": [
+          "uniqueId",
+          "deleteFlag",
+          "Object"
+        ]
+      },
+      "foreignKeys": {
+        "Features": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Feature": "uniqueId"
+          }
+        },
+        "Objects": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Object": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Object": {
+          "type": "string",
+          "comment": "Object=Objects.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Feature": {
+          "type": "string",
+          "comment": "Feature=Features.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Content": {
+          "type": "string",
+          "comment": "value when FieldType is DYNAMIC",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        }
+      }
+    },
+    {
+      "table": "ObjectServices",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_object": [
+          "uniqueId",
+          "deleteFlag",
+          "Object"
+        ]
+      },
+      "foreignKeys": {
+        "Services": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Service": "uniqueId"
+          }
+        },
+        "Objects": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Object": "uniqueId"
+          }
+        },
+        "VatGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "VatGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Object": {
+          "type": "string",
+          "comment": "Object=Objects.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Service": {
+          "type": "string",
+          "comment": "Service=Services.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "VatGroup": {
+          "type": "string",
+          "comment": "VatGroup=VatGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "maximumNumber": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "Commission": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "CommissionRate": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "ObjectSystemServices",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_object": [
+          "uniqueId",
+          "deleteFlag",
+          "Object"
+        ]
+      },
+      "foreignKeys": {
+        "SystemServices": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "SystemService": "uniqueId"
+          }
+        },
+        "Objects": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Object": "uniqueId"
+          }
+        },
+        "VatGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "VatGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Object": {
+          "type": "string",
+          "comment": "Object=Objects.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "SystemService": {
+          "type": "string",
+          "comment": "SystemService=SystemServices.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "VatGroup": {
+          "type": "string",
+          "comment": "VatGroup=VatGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "CustomTitle": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Commission": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "CommissionRate": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "includedInPrice": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "ObjectImages",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_object": [
+          "uniqueId",
+          "deleteFlag",
+          "Object"
+        ]
+      },
+      "foreignKeys": {
+        "Objects": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Object": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Object": {
+          "type": "string",
+          "comment": "Object=Objects.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Image": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "isDefault": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "ObjectPriceCorrectionPersons",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_object": [
+          "uniqueId",
+          "deleteFlag",
+          "Object"
+        ],
+        "uniqueId_deleteFlag_object_startDate_endDate": [
+          "uniqueId",
+          "deleteFlag",
+          "Object",
+          "startDate",
+          "endDate"
+        ]
+      },
+      "foreignKeys": {
+        "PriceCorrectionPersons": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "PriceCorrectionPerson": "uniqueId"
+          }
+        },
+        "Objects": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Object": "uniqueId"
+          }
+        },
+        "VatGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "VatGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Object": {
+          "type": "string",
+          "comment": "Object=Objects.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "PriceCorrectionPerson": {
+          "type": "string",
+          "comment": "PriceCorrectionPerson=PriceCorrectionPersons.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "VatGroup": {
+          "type": "string",
+          "comment": "VatGroup=VatGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "CustomTitle": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Commission": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "CommissionRate": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "includedInPrice": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "startDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "endDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "ObjectPriceCorrectionBookings",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_object": [
+          "uniqueId",
+          "deleteFlag",
+          "Object"
+        ],
+        "uniqueId_deleteFlag_object_startDate_endDate": [
+          "uniqueId",
+          "deleteFlag",
+          "Object",
+          "startDate",
+          "endDate"
+        ]
+      },
+      "foreignKeys": {
+        "PriceCorrectionBookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "PriceCorrectionBooking": "uniqueId"
+          }
+        },
+        "Objects": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Object": "uniqueId"
+          }
+        },
+        "VatGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "VatGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Object": {
+          "type": "string",
+          "comment": "Object=Objects.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "PriceCorrectionBooking": {
+          "type": "string",
+          "comment": "PriceCorrectionBooking=PriceCorrectionBookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "VatGroup": {
+          "type": "string",
+          "comment": "VatGroup=VatGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "CustomTitle": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Commission": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "CommissionRate": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "includedInPrice": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "startDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "endDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "FeatureCategories",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Description": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "MarkType": {
+          "type": "string",
+          "comment": "ENUM - M1,M2,M3,M4,M5,M6,M7,M8,M9,M10",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "Features",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "foreignKeys": {
+        "FeatureCategories": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "FeatureCategory": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "FeatureCategory": {
+          "type": "string",
+          "comment": "FeatureCategory=FeatureCategories.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "activeWeb": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "activeOccupancy": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "FieldType": {
+          "type": "string",
+          "comment": "ENUM - STATIC,DYNAMIC",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Sorting": {
+          "type": "int",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "BookingSettings",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "startDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "processesFeeBookingChange": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "partialPaymentDaysBookingDate": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "partialPaymentType": {
+          "type": "string",
+          "comment": "ENUM - FIX,PERCENT",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "partialPaymentContent": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "completePaymentDaysRemaining": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "BookingSettingsCancellations",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "foreignKeys": {
+        "BookingSettings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "BookingSetting": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "BookingSetting": {
+          "type": "string",
+          "comment": "BookingSetting=BookingSettings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "cancellationPaymentType": {
+          "type": "string",
+          "comment": "ENUM - GENERAL,FIX,PERCENT",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "cancellationPaymentDays": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "cancellationPaymentContent": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "BookingSettingsCancellationsServices",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "foreignKeys": {
+        "BookingSettingsCancellations": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "BookingSettingsCancellation": "uniqueId"
+          }
+        },
+        "Services": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Service": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "BookingSettingsCancellation": {
+          "type": "string",
+          "comment": "BookingSettingsCancellation=BookingSettingsCancellations.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Service": {
+          "type": "string",
+          "comment": "Service=Services.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "ObjectBookingSettings",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "foreignKeys": {
+        "BookingSettings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "BookingSetting": "uniqueId"
+          }
+        },
+        "Objects": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Object": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Object": {
+          "type": "string",
+          "comment": "Object=Objects.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "BookingSetting": {
+          "type": "string",
+          "comment": "BookingSetting=BookingSettings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "TouristTaxGroups",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        }
+      }
+    },
+    {
+      "table": "TouristTax",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_TouristTaxGroup_end_start": [
+          "uniqueId",
+          "deleteFlag",
+          "TouristTaxGroup",
+          "end",
+          "start"
+        ]
+      },
+      "foreignKeys": {
+        "TouristTaxGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "TouristTaxGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "TouristTaxGroup": {
+          "type": "string",
+          "comment": "TouristTaxGroup=TouristTaxGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "start": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "end": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "TouristTaxPrices",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_TouristTax": [
+          "uniqueId",
+          "deleteFlag",
+          "TouristTax"
+        ]
+      },
+      "foreignKeys": {
+        "TouristTax": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "TouristTax": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "TouristTax": {
+          "type": "string",
+          "comment": "TouristTax=TouristTax.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "minAge": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "FieldType": {
+          "type": "string",
+          "comment": "ENUM - HUMAN,ANIMAL",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "Agency",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Lastname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Firstname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Company": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Street": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Postal": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "City": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Country": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Nationality": {
+          "type": "string",
+          "comment": "ENUM - DE,GB,etc.",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Phone1": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Phone2": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Fax": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Email": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Bank": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Iban": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Bic": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "BankAccountOwner": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "TaxNumber": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "UstdIdNr": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "SystemServices",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "unique": [
+        [
+          "SalesType"
+        ]
+      ],
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL, DEPOSIT, FINAL_CLEANING, PET, SERVICE, TOURIST_TAX",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "ServiceGroups",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "active": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "Services",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_OnlineBooking": [
+          "uniqueId",
+          "deleteFlag",
+          "OnlineBooking"
+        ],
+        "uniqueId_deleteFlag_OnlineBooking_startDate_endDate": [
+          "uniqueId",
+          "deleteFlag",
+          "OnlineBooking",
+          "startDate",
+          "endDate"
+        ]
+      },
+      "foreignKeys": {
+        "ServiceGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "ServiceGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "ServiceGroup": {
+          "type": "string",
+          "comment": "ServiceGroup=ServiceGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Description": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "OnlineBooking": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Mandatory": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "includedInPrice": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "showAtCustomerAccount": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "showAtConfirmation": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "showAtCustomerBill": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "maxAmountIsNumberOfPeople": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "FieldType": {
+          "type": "string",
+          "comment": "ENUM - unit, perDay, perDayDuration, flatRate, flatRateDurationAdult, flatRatePet",
+          "notnull": true,
+          "default": "flatRate",
+          "length": "32"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL, PET, SERVICE, TOURIST_TAX",
+          "notnull": true,
+          "default": "SERVICE",
+          "length": "32"
+        },
+        "startDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "endDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "TextsCategories",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Type": {
+          "type": "string",
+          "comment": "ENUM - Object,HolidayResort",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "MarkType": {
+          "type": "string",
+          "comment": "ENUM - M1,M2,M3,M4,M5,M6,M7,M8,M9,M10",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "ObjectsTexts",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Object_Language": [
+          "uniqueId",
+          "deleteFlag",
+          "Object",
+          "Language"
+        ]
+      },
+      "foreignKeys": {
+        "TextsCategories": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "TextsCategory": "uniqueId"
+          }
+        },
+        "Objects": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Object": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Object": {
+          "type": "string",
+          "comment": "Object=Objects.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TextsCategory": {
+          "type": "string",
+          "comment": "TextsCategory=TextsCategories.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Content": {
+          "type": "mediumtext",
+          "comment": "FreeText. Can also be HTML",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Language": {
+          "type": "string",
+          "comment": "LanguageCode ISO-639-1",
+          "notnull": false,
+          "default": "NULL",
+          "length": "16"
+        }
+      }
+    },
+    {
+      "table": "HolidayResortsTexts",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_HolidayResort_Language": [
+          "uniqueId",
+          "deleteFlag",
+          "HolidayResort",
+          "Language"
+        ]
+      },
+      "foreignKeys": {
+        "TextsCategories": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "TextsCategory": "uniqueId"
+          }
+        },
+        "HolidayResorts": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "HolidayResort": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "HolidayResort": {
+          "type": "string",
+          "comment": "HolidayResort=HolidayResorts.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "TextsCategory": {
+          "type": "string",
+          "comment": "TextsCategory=TextsCategories.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Content": {
+          "type": "mediumtext",
+          "comment": "FreeText. Can also be HTML",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Language": {
+          "type": "string",
+          "comment": "LanguageCode ISO-639-1",
+          "notnull": false,
+          "default": "NULL",
+          "length": "16"
+        }
+      }
+    },
+    {
+      "table": "DocumentTemplates",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "DocumentTemplate": {
+          "type": "string",
+          "comment": "ENUM - EMAIL,PDF",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "DocumentType": {
+          "type": "string",
+          "comment": "ENUM - offer,booking,reservation,blocking,correspondence,guestBill,ownerBill",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Subject": {
+          "type": "string",
+          "comment": "Subject for Email",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Header": {
+          "type": "string",
+          "comment": "Header for PrintDocument - optional",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Footer": {
+          "type": "string",
+          "comment": "Footer for PrintDocument - optional",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Content": {
+          "type": "mediumtext",
+          "comment": "Content. Can also be HTML",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "isDefault": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "Tags",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Type": {
+          "type": "string",
+          "comment": "ENUM: ADDRESS, OBJECTS, BOOKING",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "Pets",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        }
+      }
+    },
+    {
+      "table": "Customers",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_LoginUsername": [
+          "uniqueId",
+          "deleteFlag",
+          "LoginUsername"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Salutation": {
+          "type": "string",
+          "comment": "ENUM - MALE,FEMALE,DIVERSE",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "LetterSalutation": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Greeting": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Lastname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Firstname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Nationality": {
+          "type": "string",
+          "comment": "ENUM - DE,GB,etc.",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Company": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Street": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Postal": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "City": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Country": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "Phone1": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "DescriptionPhone1": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Phone2": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "DescriptionPhone2": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Fax": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "64"
+        },
+        "DescriptionFax": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Email": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Language": {
+          "type": "string",
+          "comment": "ENUM - DE,GB,etc.",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "PassportNumber": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "DateOfBirth": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "DisabilityPercent": {
+          "type": "smallint",
+          "comment": "DisabilityPercent in percent 0 - 100",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "isEscort": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "EscortRequired": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "DisabilityPassportNumber": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "numberOfPets": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "TypeOfPets": {
+          "type": "text",
+          "comment": "ids of Pets-Table - serialized array - multiselect",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Comment": {
+          "type": "text",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Tags": {
+          "type": "text",
+          "comment": "ids of Tags-Table - serialized array - multiselect",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "LoginUsername": {
+          "type": "string",
+          "comment": "is unique",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "LoginPassword": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        }
+      }
+    },
+    {
+      "table": "Escorts",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Customer": [
+          "uniqueId",
+          "deleteFlag",
+          "Customer"
+        ]
+      },
+      "foreignKeys": {
+        "Customers": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Customer": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Customer": {
+          "type": "string",
+          "comment": "Customer=Customers.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Lastname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Firstname": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "DateOfBirth": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Nationality": {
+          "type": "string",
+          "comment": "ENUM - DE,GB,etc.",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "PassportNumber": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "isEscort": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "EscortRequired": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "DisabilityPercent": {
+          "type": "smallint",
+          "comment": "DisabilityPercent in percent 0 - 100",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "DisabilityPassportNumber": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        }
+      }
+    },
+    {
+      "table": "BookingsEscorts",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Escort": [
+          "uniqueId",
+          "deleteFlag",
+          "Escort"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "Escorts": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Escort": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Escort": {
+          "type": "string",
+          "comment": "Escort=Escorts.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        }
+      }
+    },
+    {
+      "table": "FieldTranslations",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "deleteFlag_ModuleReference_FieldReference_FieldUniqueId": [
+          "deleteFlag",
+          "ModuleReference",
+          "FieldReference",
+          "FieldUniqueId"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "ModuleReference": {
+          "type": "string",
+          "comment": "Reference module",
+          "notnull": false,
+          "default": "NULL",
+          "length": "64"
+        },
+        "FieldReference": {
+          "type": "string",
+          "comment": "Reference fieldName",
+          "notnull": false,
+          "default": "NULL",
+          "length": "64"
+        },
+        "FieldUniqueId": {
+          "type": "string",
+          "comment": "Reference fieldName",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Content": {
+          "type": "mediumtext",
+          "comment": "FreeText. Can also be HTML",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Language": {
+          "type": "string",
+          "comment": "LanguageCode ISO-639-1",
+          "notnull": false,
+          "default": "NULL",
+          "length": "16"
+        }
+      }
+    },
+    {
+      "table": "VatGroups",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Owner": [
+          "uniqueId",
+          "deleteFlag",
+          "Owner"
+        ],
+        "uniqueId_deleteFlag_Owner_active": [
+          "uniqueId",
+          "deleteFlag",
+          "Owner",
+          "active"
+        ]
+      },
+      "foreignKeys": {
+        "Owner": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Owner": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Owner": {
+          "type": "string",
+          "comment": "Owner=Owner.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "active": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "Vats",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_VatGroup": [
+          "uniqueId",
+          "deleteFlag",
+          "VatGroup"
+        ]
+      },
+      "foreignKeys": {
+        "VatGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "VatGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "VatGroup": {
+          "type": "string",
+          "comment": "VatGroup=VatGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "startDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "endDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "vat": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "Bookings",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_object": [
+          "uniqueId",
+          "deleteFlag",
+          "Object"
+        ],
+        "uniqueId_channelStatus": [
+          "uniqueId",
+          "channelStatus"
+        ],
+        "uniqueId_deleteFlag_channelStatus": [
+          "uniqueId",
+          "deleteFlag",
+          "channelStatus"
+        ],
+        "uniqueId_deleteFlag_ChannelBookingNumber_Channel": [
+          "uniqueId",
+          "deleteFlag",
+          "ChannelBookingNumber",
+          "Channel"
+        ],
+        "uniqueId_deleteFlag_arrivalDate_departureDate": [
+          "uniqueId",
+          "deleteFlag",
+          "arrivalDate",
+          "departureDate"
+        ],
+        "uniqueId_deleteFlag_object_arrivalDate_departureDate": [
+          "uniqueId",
+          "deleteFlag",
+          "Object",
+          "arrivalDate",
+          "departureDate"
+        ],
+        "uniqueId_deleteFlag_object_type_arrivalDate_departureDate": [
+          "uniqueId",
+          "deleteFlag",
+          "Object",
+          "Type",
+          "arrivalDate",
+          "departureDate"
+        ],
+        "uniqueId_deleteFlag_Customer_CustomerGuest": [
+          "uniqueId",
+          "deleteFlag",
+          "Customer",
+          "CustomerGuest"
+        ],
+        "channelStatus_bookingSource_arrivalDate_Type": [
+          "channelStatus",
+          "bookingSource",
+          "arrivalDate",
+          "Type"
+        ]
+      },
+      "foreignKeys": {
+        "Objects": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Object": "uniqueId"
+          }
+        },
+        "Customers": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Customer": "uniqueId"
+          }
+        },
+        "Customers": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "CustomerGuest": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "tStamp": {
+          "type": "int",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "Object": {
+          "type": "string",
+          "comment": "Object=Objects.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Customer": {
+          "type": "string",
+          "comment": "Customer=Customers.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "CustomerGuest": {
+          "type": "string",
+          "comment": "CustomerGuest=Customers.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "BookingNumber": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "ChannelBookingNumber": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "ForeignBookingNumber1": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "ForeignBookingNumber2": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Channel": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Type": {
+          "type": "string",
+          "comment": "ENUM - BOOKING, OFFER, OWN_BOOKING, RESERVATION",
+          "notnull": true,
+          "default": "RESERVATION",
+          "length": "32"
+        },
+        "channelStatus": {
+          "type": "string",
+          "comment": "ENUM - OPEN, PROCESS, FINISHED",
+          "notnull": true,
+          "default": "OPEN",
+          "length": "32"
+        },
+        "memberId": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "bookingSource": {
+          "type": "string",
+          "comment": "ENUM - SYSTEM, CHANNEL",
+          "notnull": true,
+          "default": "SYSTEM",
+          "length": "32"
+        },
+        "bookingDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "arrivalDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "departureDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "finalReservationDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "numberOfAdults": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "numberOfChildren": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "ageOfChildren": {
+          "type": "text",
+          "comment": "serialized array",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "numberOfPets": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "typeOfPets": {
+          "type": "text",
+          "comment": "serialized array",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "PartialPaymentPrice": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "customDepositDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "customFinalPaymentDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "customPartialPaymentDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "BookingComment": {
+          "type": "text",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "CustomerComment": {
+          "type": "text",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "OwnerComment": {
+          "type": "text",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "ManagerComment": {
+          "type": "text",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "BookingsServices",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ],
+        "uniqueId_deleteFlag_Service": [
+          "uniqueId",
+          "deleteFlag",
+          "Service"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "Services": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Service": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Service": {
+          "type": "string",
+          "comment": "Service=Services.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "startDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "endDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Quantity": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL, PET, SERVICE, TOURIST_TAX",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Vat": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Commission": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "CommissionRate": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "includedRentalService": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "modified": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "BookingsSystemServices",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ],
+        "uniqueId_deleteFlag_SystemService": [
+          "uniqueId",
+          "deleteFlag",
+          "SystemService"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "SystemServices": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "SystemService": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "SystemService": {
+          "type": "string",
+          "comment": "SystemService=SystemServices.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "startDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "endDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL, DEPOSIT, FINAL_CLEANING, PET, SERVICE, TOURIST_TAX",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Vat": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Commission": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "CommissionRate": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "includedRentalService": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "modified": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "BookingsPriceCorrectionPersons",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ],
+        "uniqueId_deleteFlag_PriceCorrectionPerson": [
+          "uniqueId",
+          "deleteFlag",
+          "PriceCorrectionPerson"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "PriceCorrectionPersons": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "PriceCorrectionPerson": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "PriceCorrectionPerson": {
+          "type": "string",
+          "comment": "PriceCorrectionPerson=PriceCorrectionPersons.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL, DEPOSIT, FINAL_CLEANING, PET, SERVICE, TOURIST_TAX",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Vat": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Commission": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "CommissionRate": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "includedRentalService": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "modified": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "BookingsPriceCorrectionBookings",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ],
+        "uniqueId_deleteFlag_PriceCorrectionBooking": [
+          "uniqueId",
+          "deleteFlag",
+          "PriceCorrectionBooking"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "PriceCorrectionBookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "PriceCorrectionBooking": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "PriceCorrectionBooking": {
+          "type": "string",
+          "comment": "PriceCorrectionBooking=PriceCorrectionBookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL, DEPOSIT, FINAL_CLEANING, PET, SERVICE, TOURIST_TAX",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Vat": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Commission": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "CommissionRate": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "includedRentalService": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "modified": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "PriceCorrectionPersons",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_SalesType": [
+          "uniqueId",
+          "deleteFlag",
+          "SalesType"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "minAge": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "maxAge": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "xthPerson": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "FieldType": {
+          "type": "string",
+          "comment": "ENUM - perDay, flatRate",
+          "notnull": true,
+          "default": "flatRate",
+          "length": "32"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "PriceCorrectionBookings",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_SalesType": [
+          "uniqueId",
+          "deleteFlag",
+          "SalesType"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "minDays": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "maxDays": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "ArrivalDay": {
+          "type": "char",
+          "comment": "ENUM - '',Mon,Tue,Wed,Thu,Fri,Sat,Sun - singleSelect",
+          "length": "5",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "DepartureDay": {
+          "type": "char",
+          "comment": "ENUM - '',Mon,Tue,Wed,Thu,Fri,Sat,Sun - singleSelect",
+          "length": "5",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "FieldType": {
+          "type": "string",
+          "comment": "ENUM - perDay, flatRate, percentBasePrice",
+          "notnull": true,
+          "default": "flatRate",
+          "length": "32"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "PaymentTypes",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "active": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Sorting": {
+          "type": "int",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "Payments",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "PaymentTypes": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "PaymentType": "uniqueId"
+          }
+        },
+        "VatGroups": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "VatGroup": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "PaymentType": {
+          "type": "string",
+          "comment": "PaymentType=PaymentTypes.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "VatGroup": {
+          "type": "string",
+          "comment": "VatGroup=VatGroups.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "PaymentDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Amount": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Vat": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Comment": {
+          "type": "text",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "Articles",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ]
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "active": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Type": {
+          "type": "string",
+          "comment": "ENUM - UNIQUE,ONGOING",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL, PET, SERVICE, TOURIST_TAX",
+          "notnull": true,
+          "default": "SERVICE",
+          "length": "32"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "onSite",
+          "length": "32"
+        }
+      }
+    },
+    {
+      "table": "BookingsArticles",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "Articles": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Article": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Article": {
+          "type": "string",
+          "comment": "Article=Articles.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Title": {
+          "type": "string",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "startDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "endDate": {
+          "type": "date",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Price": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Quantity": {
+          "type": "smallint",
+          "unsigned": true,
+          "notnull": true,
+          "default": "0"
+        },
+        "SalesType": {
+          "type": "string",
+          "comment": "ENUM - RENTAL, PET, SERVICE, TOURIST_TAX",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "PaymentMethod": {
+          "type": "string",
+          "comment": "ENUM - bankTransfer, onSite, afterDeparture",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Vat": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "Commission": {
+          "type": "char",
+          "comment": "ENUM - true/false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "CommissionRate": {
+          "type": "double",
+          "notnull": true,
+          "default": "0"
+        },
+        "modified": {
+          "type": "char",
+          "comment": "ENUM - true,false",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        }
+      }
+    },
+    {
+      "table": "CorrespondenceCustomer",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ],
+        "uniqueId_deleteFlag_Booking_Customer": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking",
+          "Customer"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "Customers": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Customer": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Customer": {
+          "type": "string",
+          "comment": "Customer=Customers.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "date": {
+          "type": "datetime",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "RecipientName": {
+          "type": "string",
+          "comment": "",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "RecipientEmail": {
+          "type": "string",
+          "comment": "",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Subject": {
+          "type": "string",
+          "comment": "Subject for e.g. Email",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "DocumentType": {
+          "type": "string",
+          "comment": "ENUM - offer,booking,reservation,blocking,correspondence,guestBill,ownerBill",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Content": {
+          "type": "mediumtext",
+          "comment": "Content. Can also be HTML",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document1": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document2": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document3": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document4": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document5": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "CorrespondenceOwner",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ],
+        "uniqueId_deleteFlag_Booking_Owner": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking",
+          "Owner"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "Owner": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Owner": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Owner": {
+          "type": "string",
+          "comment": "Owner=Owner.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "date": {
+          "type": "datetime",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "RecipientName": {
+          "type": "string",
+          "comment": "",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "RecipientEmail": {
+          "type": "string",
+          "comment": "",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Subject": {
+          "type": "string",
+          "comment": "Subject for e.g. Email",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "DocumentType": {
+          "type": "string",
+          "comment": "ENUM - offer,booking,reservation,blocking,correspondence,guestBill,ownerBill",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Content": {
+          "type": "mediumtext",
+          "comment": "Content. Can also be HTML",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document1": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document2": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document3": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document4": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document5": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    },
+    {
+      "table": "CorrespondenceManager",
+      "comment": "",
+      "primary": [
+        "id"
+      ],
+      "index": {
+        "uniqueId_deleteFlag": [
+          "uniqueId",
+          "deleteFlag"
+        ],
+        "uniqueId_deleteFlag_Booking": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking"
+        ],
+        "uniqueId_deleteFlag_Booking_Manager": [
+          "uniqueId",
+          "deleteFlag",
+          "Booking",
+          "Manager"
+        ]
+      },
+      "foreignKeys": {
+        "Bookings": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Booking": "uniqueId"
+          }
+        },
+        "Managers": {
+          "onDelete": "RESTRICT",
+          "onUpdate": "RESTRICT",
+          "constraint": {
+            "Manager": "uniqueId"
+          }
+        }
+      },
+      "fields": {
+        "id": {
+          "type": "int",
+          "autoincrement": true,
+          "unsigned": true,
+          "notnull": true
+        },
+        "uniqueId": {
+          "type": "string",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "deleteFlag": {
+          "type": "char",
+          "length": "1",
+          "notnull": true,
+          "default": "0"
+        },
+        "Booking": {
+          "type": "string",
+          "comment": "Booking=Bookings.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "Manager": {
+          "type": "string",
+          "comment": "Manager=Managers.uniqueId",
+          "notnull": false,
+          "default": "NULL",
+          "length": "26"
+        },
+        "date": {
+          "type": "datetime",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "RecipientName": {
+          "type": "string",
+          "comment": "",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "RecipientEmail": {
+          "type": "string",
+          "comment": "",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "Subject": {
+          "type": "string",
+          "comment": "Subject for e.g. Email",
+          "notnull": true,
+          "default": "",
+          "length": "255"
+        },
+        "DocumentType": {
+          "type": "string",
+          "comment": "ENUM - offer,booking,reservation,blocking,correspondence,guestBill,ownerBill",
+          "notnull": true,
+          "default": "",
+          "length": "32"
+        },
+        "Content": {
+          "type": "mediumtext",
+          "comment": "Content. Can also be HTML",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document1": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document2": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document3": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document4": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        },
+        "Document5": {
+          "type": "binary",
+          "comment": "uuid from DBFS/Finder - can be NULL",
+          "length": "16",
+          "notnull": false,
+          "default": "NULL"
+        }
+      }
+    }
+  ]
+}
