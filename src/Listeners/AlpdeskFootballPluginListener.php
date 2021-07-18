@@ -35,9 +35,9 @@ class AlpdeskFootballPluginListener
 
         $dbReference = (int)$mandantdata['footballmandantdb'];
 
-        if ($dbReference === null || $dbReference <= 0) {
+        /*if ($dbReference === null || $dbReference <= 0) {
             throw new \Exception('invalid footballmandantdb');
-        }
+        }*/
 
         //$connection = AlpdeskcoreDatabasemanagerModel::connectionById($dbReference);
 
@@ -66,10 +66,10 @@ class AlpdeskFootballPluginListener
             $response = [
                 'ngContent' => 'error loading data',
                 'ngStylesheetUrl' => [
-                    0 => ContaoEnvironment::get('base') . 'bundles/alpdeskautomationplugin/test.css'
+                    0 => ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/css/test.css'
                 ],
                 'ngScriptUrl' => [
-                    0 => ContaoEnvironment::get('base') . 'bundles/alpdeskautomationplugin/test.js'
+                    0 => ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/js/test.js'
                 ]
             ];
 
