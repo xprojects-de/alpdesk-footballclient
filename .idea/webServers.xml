@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="48ceb68c-9749-4a18-915f-f0fa7d5028d2" name="Mamp Alpdesk-Football" url="https://contao.local-latest:8890">
+        <fileTransfer mountedRoot="$PROJECT_DIR$/../../MAMPP/contao.local-latest/vendor/alpdesk" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
