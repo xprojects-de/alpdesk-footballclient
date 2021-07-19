@@ -1,0 +1,54 @@
+<div class="alpdeskfootball_members">
+
+    <h1>{{ headline }}</h1>
+
+    <button id="reload">{{ reload }}</button>
+
+    <div class="members_container">
+
+        {% for member in members %}
+
+            <div class="member">
+
+                <strong>
+
+                    {{ member.Lastname }} {{ member.Firstname }}
+
+                    {% for youth in member.Youth %}
+                        <span class="youth">{{ youth }}</span>
+                    {% endfor %}
+
+                </strong>
+
+                <span>{{ member.Street }}, {{ member.Postal }} {{ member.City }}</span>
+                <span>
+
+                    {{ member.Phone1 }}
+
+                    {% if  member.Phone2 != '' %}
+                        , {{ member.Phone2 }}
+                    {% endif %}
+
+                </span>
+
+                {% if  member.Email != '' %}
+                    <span>{{ member.Email }}</span>
+                {% endif %}
+
+                {% if  member.Comment != '' %}
+                    <p>{{ member.Comment | raw }}</p>
+                {% endif %}
+
+                <div class="utils_container">
+
+                    <button class="edit">bearbeiten</button>
+                    <button class="delete">löschen</button>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+    </div>
+
+</div>

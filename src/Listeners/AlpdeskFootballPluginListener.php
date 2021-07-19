@@ -7,9 +7,12 @@ namespace Alpdesk\AlpdeskFootball\Listeners;
 use Alpdesk\AlpdeskCore\Events\Event\AlpdeskCorePlugincallEvent;
 use Alpdesk\AlpdeskCore\Library\Mandant\AlpdescCoreBaseMandantInfo;
 use Alpdesk\AlpdeskCore\Model\Database\AlpdeskcoreDatabasemanagerModel;
+use Alpdesk\AlpdeskFootball\Library\Members\Members;
+use Alpdesk\AlpdeskFootball\Library\Trainings\Trainings;
 use Alpdesk\AlpdeskFootball\Model\CrudModel;
 use Twig\Environment;
 use Contao\Environment as ContaoEnvironment;
+use Contao\System;
 
 class AlpdeskFootballPluginListener
 {
@@ -75,24 +78,34 @@ class AlpdeskFootballPluginListener
             $response = [
                 'ngContent' => 'error loading data',
                 'ngStylesheetUrl' => [
-                    0 => ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/css/test.css'
+                    0 => ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/css/football_base.css?v=' . \time()
                 ],
                 'ngScriptUrl' => [
-                    0 => ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/js/test.js'
+                    0 => ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/js/football_base.js?v=' . \time()
                 ]
             ];
+
+            System::loadLanguageFile('default', 'de');
 
             switch ($plugin) {
 
                 case 'football_members':
                 {
-                    $response['ngContent'] = 'Hello Members';
+                    $response['ngStylesheetUrl'][1] = ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/css/members/football_members.css?v=' . \time();
+                    $response['ngScriptUrl'][1] = ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/js/members/football_members.js?v=' . \time();
+
+                    $response['ngContent'] = (new Members($this->twig))->run();
+
                     break;
                 }
 
                 case 'football_trainings':
                 {
-                    $response['ngContent'] = 'Hello Trainings';
+                    $response['ngStylesheetUrl'][1] = ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/css/trainings/football_trainings.css?v=' . \time();
+                    $response['ngScriptUrl'][1] = ContaoEnvironment::get('base') . 'bundles/alpdeskfootball/js/trainings/football_trainings.js?v=' . \time();
+
+                    $response['ngContent'] = (new Trainings($this->twig))->run();
+
                     break;
                 }
 
