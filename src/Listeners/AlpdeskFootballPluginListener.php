@@ -60,6 +60,10 @@ class AlpdeskFootballPluginListener
     {
         try {
 
+            if (!\in_array($event->getResultData()->getPlugin(), ['football_members', 'football_trainings'])) {
+                return;
+            }
+
             $event->stopPropagation();
 
             $plugin = $event->getResultData()->getPlugin();
