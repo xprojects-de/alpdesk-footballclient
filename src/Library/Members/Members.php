@@ -19,6 +19,11 @@ class Members extends PluginBase
         return $this->twig->render('@AlpdeskFootball/alpdeskfootball_members.html.twig', [
             'headline' => $GLOBALS['TL_LANG']['alpdeskfootball_members']['headline'],
             'reload' => $GLOBALS['TL_LANG']['alpdeskfootball_reload'],
+            'reloadRole' => \json_encode([
+                'type' => 'route',
+                'target' => 'football_members',
+                'params' => []
+            ]),
             'members' => $this->getMembersList()
         ]);
     }

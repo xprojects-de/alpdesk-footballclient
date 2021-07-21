@@ -18,6 +18,16 @@ class Trainings extends PluginBase
     {
         return $this->twig->render('@AlpdeskFootball/alpdeskfootball_trainings.html.twig', [
             'headline' => $GLOBALS['TL_LANG']['alpdeskfootball_trainings']['headline'],
+            'reloadRole' => \json_encode([
+                'type' => 'route',
+                'target' => 'football_trainings',
+                'params' => []
+            ]),
+            'reloadRole1' => \json_encode([
+                'type' => 'route',
+                'target' => 'football_members',
+                'params' => []
+            ]),
             'reload' => $GLOBALS['TL_LANG']['alpdeskfootball_reload']
         ]);
     }
