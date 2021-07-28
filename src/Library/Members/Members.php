@@ -24,6 +24,44 @@ class Members extends PluginBase
                 'target' => 'football_members',
                 'params' => []
             ]),
+            'list' => \json_encode([
+                'type' => 'list',
+                'items' => [
+                    [
+                        'headline' => 'hallo',
+                        'subHeadline' => 'welt',
+                        'lines' => [
+                            'Bla Bla',
+                            '<strong>Bla Bla i</strong>',
+                            'Bla Bla 2'
+                        ],
+                        'buttons' => [
+                            [
+                                'label' => 'bearbeiten',
+                                'target' => 'football_members',
+                                'params' => [
+                                    'hallo' => 'Welt'
+                                ]
+                            ],
+                            [
+                                'label' => 'löschen'
+                            ]
+                        ]
+                    ],
+                    [
+                        'headline' => 'hallo1',
+                        'subHeadline' => '',
+                        'buttons' => [
+                            [
+                                'label' => 'bearbeiten'
+                            ],
+                            [
+                                'label' => 'löschen'
+                            ]
+                        ]
+                    ]
+                ]
+            ]),
             'members' => $this->getMembersList()
         ]);
     }
